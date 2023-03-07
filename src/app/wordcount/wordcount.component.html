@@ -1,0 +1,8 @@
+<h1 class="bg-info">Word Count</h1>
+<div class="container">
+    <input type="text" placeholder="Enter a string" class="form-control" [(ngModel)]="txt"><br>
+    <button class="btn btn-success" (click)="wrdcnt()">Count</button>
+</div>
+<div>
+    <h1>{{wrd|json}}</h1>
+</div>

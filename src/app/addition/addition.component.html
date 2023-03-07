@@ -1,0 +1,13 @@
+<h1>Addition</h1>
+<div class="container">
+    <input type="text" placeholder="Enter first number" class="form-control" #num1>
+</div>
+<div class="container">
+    <input type="text" placeholder="Enter second number" class="form-control" #num2>
+</div>
+<div class="container">
+    <input type="submit" class="btn btn-success" (click)="calc(num1,num2)">
+</div>
+<div>
+    {{res}}
+</div>

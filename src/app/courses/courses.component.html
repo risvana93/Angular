@@ -1,0 +1,42 @@
+<h3 class="bg-info">Courses</h3>
+
+<div class="row">
+    <div class="col">
+        <div *ngIf="courselist.length>0">
+            <ul>
+                <li *ngFor="let i of courselist">{{i.name}} {{i.fee}} {{i.duration}} {{i.rating}}</li>
+            </ul>
+        </div>
+        <div *ngIf="courselist.length==0">
+            no-courses
+        </div> 
+
+    </div>
+    <div class="col">
+        <div *ngIf="courselist.length>0;then cse else nocse"></div>
+
+        <ng-template #cse>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Fee</th>
+                <th>Duration</th>
+                <th>Rating</th>
+            </tr>
+            <tr *ngFor="let i of courselist">
+                <td>{{i.id}}</td>
+                <td>{{i.name|uppercase}}</td>
+                <td>{{i.fee|currency:"INR"}}</td>
+                <td>{{i.duration|lowercase}}</td>
+                <td>{{i.rating}}</td>
+            </tr>
+        </table>
+        {{ddate|date:"YYYY MMM dd"}}
+    </ng-template> 
+
+    <ng-template #nocse>
+        no courses
+    </ng-template>
+    </div>
+</div>
